@@ -157,3 +157,77 @@ function numberToString(num) {
 //   return String(num);
   return ""+num
 }
+
+
+// Remove String Spaces
+// Simple, remove the spaces from the string, then return the resultant string.
+
+function noSpace(x){
+  return x.replace(/\s/g , '')
+
+}
+
+// Is n divisible by x and y?
+// Create a function that checks if a number n is divisible by two numbers x AND y. All inputs are positive, non-zero digits.
+
+// Examples:
+// 1) n =   3, x = 1, y = 3 =>  true because   3 is divisible by 1 and 3
+// 2) n =  12, x = 2, y = 6 =>  true because  12 is divisible by 2 and 6
+// 3) n = 100, x = 5, y = 3 => false because 100 is not divisible by 3
+// 4) n =  12, x = 7, y = 5 => false because  12 is neither divisible by 7 nor 5
+function isDivisible(n, x, y) {
+  return n % x === 0 && n % y === 0
+}
+
+// Abbreviate a Two Word Name
+// function to convert a name into initials. This kata strictly takes two words with one space in between them.
+
+  // The output should be two capital letters with a dot separating them.
+  
+  // It should look like this:
+  
+  // Sam Harris => S.H
+  
+  // patrick feeney => P.F
+
+
+function abbrevName(name){
+    // code away
+  const space = name.indexOf(' ')
+  return (name[0] +'.'+ name[space+1]).toUpperCase()
+
+}
+
+
+
+// A Needle in the Haystack
+// Can you find the needle in the haystack?
+
+// Write a function findNeedle() that takes an array full of junk but containing one "needle"
+
+// After your function finds the needle it should return a message (as a string) that says:
+
+// "found the needle at position " plus the index it found the needle, so:
+
+// findNeedle(['hay', 'junk', 'hay', 'hay', 'moreJunk', 'needle', 'randomJunk'])
+// should return "found the needle at position 5"
+
+
+function findNeedle(haystack) {
+  // your code here
+  const index = haystack.indexOf('needle')
+  return `found the needle at position ${index}`
+}
+
+// Beginner - Lost Without a Map
+// Given an array of integers, return a new array with each value doubled.
+
+// For example:
+
+// [1, 2, 3] --> [2, 4, 6]
+
+
+
+function maps(x){
+ return x.map(n => n*2)
+}
