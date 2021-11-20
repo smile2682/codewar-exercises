@@ -231,3 +231,46 @@ function findNeedle(haystack) {
 function maps(x){
  return x.map(n => n*2)
 }
+
+
+// Friday
+// Invert values
+
+function invert(array) {
+//   no need to deal with [] case since [].map will return an empty array as wanted , instead of an error
+   return array.map(n => -n);
+}
+
+// function invert(array) {
+  
+   return array.length === 0 ? [] : array.map(n => -n) ;
+}
+
+// Reversed Words
+
+function reverseWords(str){
+  return str.split(' ').reverse().join(' '); // reverse those words
+}
+
+// Function 1 - hello world
+
+// greet = ()=> "hello world!"
+
+const greet = function (){
+  return "hello world!"
+}
+
+// Get the mean of an array
+
+function getAverage(marks){
+  //TODO : calculate the downward rounded average of the marks array
+  return Math.floor(marks.reduce((a,b)=>a+b)/marks.length)
+}
+
+// Convert a String to a Number!
+
+var stringToNumber = function(str){
+  // put your code here
+//   parseInt(str) works as well.
+  return Number(str);
+}
