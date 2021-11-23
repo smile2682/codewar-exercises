@@ -274,3 +274,67 @@ var stringToNumber = function(str){
 //   parseInt(str) works as well.
   return Number(str);
 }
+
+
+// Beginner Series #2 Clock
+
+function past(h, m, s){
+  //#Happy Coding! ^_^
+  return (s + 60 * (m + 60 * h)) * 1000
+}
+
+
+// Fake Binary
+// 1
+function fakeBin(x){
+//   either way would work
+//   return x.replace(/\d/g, d => d < 5 ? 0 : 1);
+// string.replace(a,b)==> use b to replace a
+  return x.replace(/[0-9]/g, y => y < 5 ? 0 : 1)
+}
+// 2
+function fakeBin(x){
+  console.log(typeof(x))
+  
+  return x.split('').map(n=>n<5? n=0: n=1).join('')
+  
+
+}
+
+
+
+// Returning Strings
+// 1
+function greet(name){
+  //your code here
+  return `Hello, ${name} how are you doing today?`
+}
+// 2
+function greet(name){
+  //your code here
+  return "Hello, " + name + " how are you doing today?"
+}
+
+
+
+
+// Jenny's secret message
+// refactor
+function greet(name){
+  return "Hello, " + (name === "Johnny" ? "my love" : name) + "!";
+    }
+// origin
+function greet(name){
+  if(name === "Johnny")
+    return "Hello, my love!";
+  return "Hello, " + name + "!";
+}
+
+
+
+// You only need one - Beginner
+
+function check(a, x) {
+  // your code here
+  return a.includes(x);
+}
