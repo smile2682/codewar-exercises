@@ -387,3 +387,61 @@ const reverseSeq = n => {
   
   return Array.from({length:n}, (_,i)=>i+1).reverse();
 };
+
+// Total amount of points
+
+function points(games) {
+  // your code here
+  let points = 0;
+  games.map(result=>{
+    const ourTeam = result[0];
+    const otherTeam = result[2];
+    if (ourTeam > otherTeam){
+      points += 3
+     }
+    else if (ourTeam === otherTeam){
+      points += 1
+    }
+    
+    })
+  return points;
+}
+
+
+// Array plus array
+// refactor
+function arrayPlusArray(arr1, arr2) {
+//   use concat, takes more space though
+//   better to set the initial value of 0, incase the arr is empty
+  return arr1.concat(arr2).reduce((a,b)=>a+b,0); //something went wrong
+}
+// origin
+function arrayPlusArray(arr1, arr2) {
+  return arr1.reduce((a,b)=>a+b) + arr2.reduce((a,b)=>a+b); //something went wrong
+}
+
+// Count the Monkeys!
+// refactor
+function monkeyCount(n) {
+// this is how array.from works when taking an obj as parameter
+// Array.from({length: 5}, (v, i) => i);
+// [0, 1, 2, 3, 4] 
+ return  Array.from({length:n}, (_,i)=>i+1)
+    console.log({length:n})
+}
+
+// original
+function monkeyCount(n) {
+// your code here
+  const arr = [];
+  for (let i = 0; i < n; i ++){
+    arr.push(i+1);
+  }
+  return arr;
+}
+
+// Reversed Strings
+
+function solution(str){
+  return str.split('').reverse().join('')
+}
