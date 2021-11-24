@@ -333,8 +333,57 @@ function greet(name){
 
 
 // You only need one - Beginner
-
+// refactor
 function check(a, x) {
   // your code here
   return a.includes(x);
 }
+
+// original
+function check(a, x) {
+  // your code here
+  for( let i of a){
+  if(i === x)
+   return true
+    }
+  return false
+  }
+
+// Sum without highest and lowest number
+// refactor
+function sumArray(array) {
+  return (Array.isArray(array) && array.length > 1)
+    ? array.reduce((s, n) => s + n, 0) - Math.min(...array) - Math.max(...array)
+    : 0
+}
+// origin
+function sumArray(array) {
+  
+  if (!Array.isArray(array) || array.length===0){
+    return 0;
+  }
+  if (array.length=== 2 || array.length=== 1){
+    return 0;
+  }
+  array.sort((a,b)=>a-b);
+  array.shift();
+  array.pop();
+  return array.reduce((a, b)=> a+b)
+  
+
+}
+
+// Reversed sequence
+// refactor
+const reverseSeq = n => {
+  const rev = [];
+  for (let i = n; i > 0; i--){
+    rev.push(i)
+  }
+  return rev;
+};
+// origin
+const reverseSeq = n => {
+  
+  return Array.from({length:n}, (_,i)=>i+1).reverse();
+};
