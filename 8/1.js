@@ -445,3 +445,45 @@ function monkeyCount(n) {
 function solution(str){
   return str.split('').reverse().join('')
 }
+
+
+// Get Nth Even Number
+
+function nthEven(n){
+  // your code here
+  return n * 2 - 2
+}
+
+// String repeat
+// refactor
+function repeatStr (n, s) {
+  return s.repeat(n);
+}
+
+// original
+function repeatStr (n, s) {
+  output = ''
+  for(let i = 0; i <= n-1; i++){
+     output += s
+  }
+  return output;
+}
+
+
+
+// Will you make it?
+
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+  return distanceToPump <= mpg * fuelLeft;
+  // TODO
+};
+
+
+
+// Calculate average
+
+function find_average(array) {
+  // your code here
+  const l = array.length 
+  return l === 0 ? 0 : array.reduce((a,b)=>(a+b))/l
+}
