@@ -487,3 +487,49 @@ function find_average(array) {
   const l = array.length 
   return l === 0 ? 0 : array.reduce((a,b)=>(a+b))/l
 }
+
+
+
+// I love you, a little , a lot, passionately ... not at all
+// refactor
+function howMuchILoveYou(nbPetals) {
+    // your code
+  const phrases = [
+    'I love you',
+    'a little',
+    'a lot',
+    'passionately',
+    'madly',
+    'not at all',
+  ]
+     return phrases[(nbPetals - 1) % phrases.length] 
+
+}
+// original
+function howMuchILoveYou(nbPetals) {
+    // your code
+  n = nbPetals % 6
+  switch (n){
+      case 1:
+        return 'I love you';
+        break;
+      case 2:
+         return'a little'
+        break;
+      case 3:
+        return'a lot'
+        break;
+      case 4:
+         return'passionately'
+        break;
+      case 5:
+        return 'madly'
+        break;
+      case 0:
+        return 'not at all'
+        break;
+      
+      
+      
+  }
+}
