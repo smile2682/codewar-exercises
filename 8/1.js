@@ -533,3 +533,70 @@ function howMuchILoveYou(nbPetals) {
       
   }
 }
+
+
+// DNA to RNA Conversion
+// refactor
+function DNAtoRNA(dna) {
+  // create a function which returns an RNA sequence from the given DNA sequence
+  return dna.replace(/T/g, "U")
+}
+
+// original
+function DNAtoRNA(dna) {
+  // create a function which returns an RNA sequence from the given DNA sequence
+  return dna.length ===0 ? "": dna.split('').map(i=> i ==='T'? "U" : i).join ('')
+}
+
+// Difference of Volumes of Cuboids
+// refactor
+const volume = c => c.reduce((x,y) => x*y)
+
+function findDifference(a, b) {
+  //loading...
+  return Math.abs(volume(a)-volume(b))
+}
+
+// original
+function findDifference(a, b) {
+  //loading...
+  va = a.reduce((a,b)=>a*b)
+  vb = b.reduce((a,b)=>a*b)
+  
+  return va-vb >= 0 ? va-vb : vb-va
+                
+}
+
+
+// Keep up the hoop
+
+function hoopCount (n) {
+   //your code goes here    
+  return n >= 10 ?  "Great, now move on to tricks" : "Keep at it until you get it"
+}
+
+// Can we divide it?
+function isDivideBy(number, a, b) {
+  // good luck
+  return number %a === 0 && number %b === 0
+}
+
+// Number of People in the Bus
+// refactor
+var number = function(busStops){
+  // Good Luck!
+  return busStops.reduce((n,[on,off])=>n+on-off,0)
+}
+
+// original
+var number = function(busStops){
+  // Good Luck!
+  let getIn = 0;
+  let out = 0;
+ for (let i = 0; i < busStops.length; i++){
+  getIn += busStops[i][0];
+  out += busStops[i][1];
+ } return (getIn - out)
+  
+//   return busStops.reduce((a,b)=>(a[0]+b[0]-a[1]-b[1]),0)
+}
