@@ -600,3 +600,52 @@ var number = function(busStops){
   
 //   return busStops.reduce((a,b)=>(a[0]+b[0]-a[1]-b[1]),0)
 }
+
+
+// Remove the minimum
+// refactor
+function removeSmallest(numbers) {
+  if (numbers.length === 0) return [];
+  const min = Math.min(...numbers);
+  const idx = numbers.indexOf(min)
+  return numbers.filter((n,i,arr)=> i !== idx)
+  
+  
+ }
+
+
+// original
+function removeSmallest(numbers) {
+//   throw "TODO: removeSmallest";
+  if (numbers.length === 0) return [];
+//   spread the numbers in the array and use Math.min to find the smallest element
+  const small = Math.min(...numbers)
+//   find the index of first smallest element, if there is more than one
+  const index = numbers.indexOf(small)
+//   two parameters, the iterated number, the index
+ return numbers.filter((n, i)=> i!==index )
+}
+
+
+
+// Squash the bugs
+
+function findLongest(str) {
+  
+  var spl = str.split(" ");
+  var longest = 0
+  
+  for (var i = 0; i < spl.length; i++) {
+    if (spl[i].length > longest) {
+      longest = spl[i].length
+    }
+    }
+    return longest
+}
+
+// Century From Year
+
+function century(year) {
+  // Finish this :)
+  return Math.ceil(year/100)
+  }
