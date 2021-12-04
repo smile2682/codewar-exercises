@@ -649,3 +649,59 @@ function century(year) {
   // Finish this :)
   return Math.ceil(year/100)
   }
+
+  
+// Basic Mathematical Operations
+// original
+function basicOp(operation, value1, value2)
+{
+  // Code
+  
+    switch (operation) {
+        case '+': return value1 + value2;
+        case '-': return value1 - value2;
+        case '*': return value1 * value2;
+        case '/': return value1 / value2;
+        default: return 'Operation must be one of + - * /';
+    }
+}
+
+// refactor
+function basicOp(operation, value1, value2)
+{
+  // Code
+  return eval (value1+operation+value2)
+}
+
+
+
+// Filter out the geese
+// refactor
+function gooseFilter (birds) {
+  var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+//   index = -1 when the element does not exist in array
+  return birds.filter(b=> geese.indexOf(b)<0)
+  // return an array containing all of the strings in the input array except those that match strings in geese
+};
+
+// original
+function gooseFilter (birds) {
+  var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+  return birds.filter(bird=>!geese.includes(bird))
+  // return an array containing all of the strings in the input array except those that match strings in geese
+};
+
+
+// Beginner Series #3 Sum of Numbers
+
+function getSum( a,b )
+{let sum = 0
+  if (a === b){
+    return a;
+  }
+ const arr = [a,b].sort((a, b) => a - b);
+ 
+ for (let i=arr[0]; i<= arr[1]; i++){
+   sum += i
+ }return sum
+}
