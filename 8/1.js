@@ -705,3 +705,53 @@ function getSum( a,b )
    sum += i
  }return sum
 }
+
+
+// Sum of two lowest positive integers
+
+function sumTwoSmallestNumbers(numbers) {  
+  //Code here
+//   .sort() will consider 21> 3, below is the correct way to sort numbers
+  order = numbers.sort((a,b)=> a-b)
+  return order[0]+order[1]
+  
+}
+
+
+// Convert number to reversed array of digits
+// refactor
+function digitize(n) {
+//   method 1
+  //Array.from use the iterable first parameter to the second para which is a callback func.
+  //    in this case, change num to string of every letter, then to single nums again, then reverse it 
+  //   return Array.from(String(n),Number).reverse()
+  
+// method 2
+  //   clever! use Number func as a callback func in map()
+  return String(n).split('').map(Number).reverse()
+}
+// original
+function digitize(n) {
+  //code here
+  
+  const str= n.toString().split('').reverse()
+  return str.map(a=>parseInt(a))
+  
+}
+
+
+
+// Square(n) Sum
+// refactor
+function squareSum(numbers){
+//   the initial value, which is sum is set to be 0; 
+//   reduce starts from num, which is the first element of the array and square that.
+//  numbers.reduce((a,b)=>a*a+b*b is setting the initial value to the first element of the array, which will work if the array is not empty.
+  return numbers.reduce((sum,num)=>sum+ num*num,0)
+
+}
+// original
+function squareSum(numbers){
+//   why not a*a + b*b ?
+return numbers.reduce((a,b)=>a+b*b,0)
+}
