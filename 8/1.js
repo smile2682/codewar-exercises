@@ -755,3 +755,86 @@ function squareSum(numbers){
 //   why not a*a + b*b ?
 return numbers.reduce((a,b)=>a+b*b,0)
 }
+
+
+
+// Sum of positive
+
+// refactor
+function positiveSum(arr) {
+//   what if a is negative?
+  return arr.reduce((a,b) => a+(b < 0 ? 0: b),0)
+  
+}
+
+// refactor
+function positiveSum(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++){
+    if(arr[i]>0){
+      sum += arr[i]
+    }
+  }return sum;
+}
+
+// original
+function positiveSum(arr) {
+//   for loop + splice does not work here since splice changes the original array, affecting the i order.
+  pos = arr.filter(x => x > 0 )
+  if (pos.length === 0){
+    return 0}
+  let sum = pos.reduce((prev, curr)=> prev + curr)
+  console.log(sum)
+  return sum;
+}
+console.log(positiveSum([-1,-2,-3,-4,-5]))
+
+
+
+// Find the next perfect square!
+// refactor
+function findNextSquare(sq) {
+//   number % 1 will return the decimal part of a number. Because that's what remains when you take out all the 1s from the number.
+// If the square root is an integer, the remainder will be zero which gets evaluated as false.
+// If the number is not a square, then remainder of square root will not be zero and will get evaluated as true.
+  const root = Math.sqrt(sq);
+  return root % 1 ? -1 : (root+1) ** 2;
+}
+
+// original
+function findNextSquare(sq) {
+  // Return the next square if sq is a perfect square, -1 otherwise
+  let current = Math.sqrt(sq)
+  if (Number.isInteger(current)){
+   return (current+1) * (current+1)
+  
+    }
+  return -1;
+}
+
+
+
+
+// Friend or Foe?
+// refactor
+function friend(friends){
+  //your code here
+  return friends.filter(friend => friend.length===4)
+}
+
+console.log(friend(['Ryan', 'Peter']))
+
+// original
+function friend(friends){
+  //your code here
+  const real = [];
+//   let, not const in for loop!!
+  for (let i = 0; i <friends.length; i++){
+    if (friends[i].length === 4){
+      real.push(friends[i])
+    }
+  }
+  return real;
+}
+
+console.log(friend(['Ryan', 'Peter']))
