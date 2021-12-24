@@ -838,3 +838,47 @@ function friend(friends){
 }
 
 console.log(friend(['Ryan', 'Peter']))
+
+
+// Find the smallest integer in the array
+
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    return Math.min(...args)
+  }
+}
+
+
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+//     define min outside of here, instead of in the for loop
+    let min = args[0];
+    for(let i = 0; i < args.length; i++){
+      if (args[i] < min){
+        min = args[i]
+      }
+    } return min;
+  }
+}
+
+
+
+// Counting sheep...
+
+
+function countSheeps(arrayOfSheep) {
+  // TODO May the force be with you
+  const present = arrayOfSheep.filter(sheep => sheep === true)
+  return present.length
+}
+
+
+
+// Keep Hydrated!
+
+function litres(time) {
+  return Math.floor(time/2);
+}
+
+// .round: 4she5ru
+// .floor: round to smallest integer
